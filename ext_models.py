@@ -3,9 +3,7 @@ import torch
 import sys
 import math
 
-VCNET_PATH = (
-    "/Users/rogerprosrius/projects/varying-coefficient-net-with-functional-tr-main/"
-)
+VCNET_PATH = "/varying-coefficient-net-with-functional-tr-main/"
 
 sys.path.append("..")
 sys.path.append(VCNET_PATH)
