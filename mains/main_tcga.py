@@ -375,8 +375,10 @@ for _ in range(n_iterations):
             true_outcomes, pred_dose_response = get_true_and_pred_y(
                 model, df_test, patient, hypernet, dataset, treatment_idx, step_size
             )
-            amse = m.mean_squared_error(true_outcomes, pred_dose_response)
-            #  TODO fer mean sq error entre mean(true outcomes) i mean(pred)
+            true_outcomes_mean = np.mean(true_outcomes)
+            pred_dose_response_mean = np.mean(pred_dose_response)
+
+            amse = (true_outcomes_mean - pred_dose_response_mean) ** 2
             amses.append(amse)
 
         return mises, amses
